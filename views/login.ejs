@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>欢迎登录</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<p style="text-align: right">没有用户名？<a href="reg">注册</a></p>
+<h3 style="text-align: center;">欢迎登录</h3>
+<center>
+    <%
+    if(error){
+    %>
+    <span><%=error%></span>
+    <%
+    }
+    %>
+    <form action="login" method="post">
+        用户名：<input type="text" name="email"><br>
+        密&nbsp;&nbsp;&nbsp;&nbsp;码：<input type="password" name="password"><br>
+        <input type="submit" value="登录">
+    </form>
+</center>
+</body>
+</html>
