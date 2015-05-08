@@ -4,7 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var session = require('express-session')
+var session = require('express-session');
+var sessionFilter = require('./md/session-filter')
 
 
 
@@ -26,7 +27,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({'secret':'NNOTE'}))
+app.use(session({'secret':'NNOTE'}));
+app.use(sessionFilter());
 
 // 路由之前加入
 app.use(function(req,res,next){

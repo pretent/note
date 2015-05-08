@@ -15,6 +15,7 @@ router.use(function(req,res,next){
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
+
 });
 
 
@@ -48,7 +49,7 @@ router.post('/reg',function(req,res){
             // 注册成功并且登录
             req.session.user = retUser;
             res.locals.user = retUser;
-            return res.render('user/index');
+            return res.render('note/index');
         }
     })
 })
@@ -82,12 +83,18 @@ router.post('/login',function(req,res){
         if(md5.update(req.body.password).digest('hex') == row.password){
             res.locals.user = row; // 返回视图使用
             req.session.user = row; //session使用
-            return res.render('user/index');
+            return res.render('note/index');
         }else{
             res.locals.error = '用户名或者密码不正确!';
             return res.render('login');
         }
     })
+})
+
+// 用户退出
+router.get('/logout',function(req,res){
+    req.session.user = null;
+    res.redirect('login');
 })
 
 module.exports = router;

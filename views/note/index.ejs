@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>欢迎<%=user.email%></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<p style="text-align: right">欢迎您:<a href="user/<%=user._id%>"><%=user.email%></a>&nbsp;|&nbsp;<a href="logout">退出</a></p
+<div style="width: 1200px;height:600px;text-align: center;background-color: aliceblue;position:absolute;">
+    <div style="width: 1011px;height:30px;background-color: skyblue;padding-left: 18%;padding-top: auto;padding-bottom: auto;">
+        <span onclick="createNote();" onmouseover="">创建新笔记</span>
+    </div>
+    <div style="height:500px;width: 200px;background-color: azure;float: left;padding: 10px;">
+        <h4>我的笔记</h4>
+        <ul>
+            <li>昨天</li>
+            <li>今天</li>
+            <li>明天</li>
+            <li>后天</li>
+        </ul>
+    </div>
+    <div style="height:500px;width: 1000px;background-color: azure;float: right;">
+        希望在右边
+    </div>
+</div>
+</body>
+</html>

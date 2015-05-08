@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>欢迎注册</title>
+    <title>欢迎<%=user.email%></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
-<p style="text-align: right">欢迎您:<a><%=user.email%></a></p>
+
+<p style="text-align: right">欢迎您:<a href="user/<%=user._id%>"><%=user.email%></a></p>
+
 </body>
 </html>
