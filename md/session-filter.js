@@ -10,5 +10,6 @@ module.exports = function(option){
         console.log(typeof res);
         console.log(typeof next);
         next();
+        // 我就试试
     }
 }
