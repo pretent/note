@@ -6,9 +6,7 @@ module.exports = function(option){
         var req = arguments[0];
         var res = arguments[1];
         var next = arguments[2];
-        console.log(typeof req);
-        console.log(typeof res);
-        console.log(typeof next);
+        console.log(module.filename);
         next();
     }
 }
