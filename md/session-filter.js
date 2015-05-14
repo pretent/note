@@ -8,5 +8,6 @@ module.exports = function(option){
         var next = arguments[2];
         console.log(module.filename);
         next();
+        // 我就试试
     }
 }
